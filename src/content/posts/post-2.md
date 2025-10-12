@@ -1,13 +1,13 @@
 ---
-title: 'Post 2'
-author: Tristen Tomczak
-date: '03-23-2025'
+title: 'Post 2 - Project Planning with Jira'
+author: Finn Tucker
+date: '12-10-2025'
 image:
-    url: '/images/blog-post.webp'
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/1200px-Jira_Logo.svg.png'
     alt: 'Post Thumbnail'
 ---
 
-Aenean a ex et metus finibus malesuada commodo in magna. In ut libero urna. Aenean in quam in ipsum rutrum egestas. Donec semper dignissim ante. Sed efficitur mi et sapien ultrices malesuada. Aliquam fermentum aliquam ante, eu semper mi vestibulum quis. Sed et purus metus. Pellentesque vestibulum commodo euismod. Duis a mauris accumsan lorem laoreet tempor. Mauris accumsan varius metus, in rutrum magna accumsan eget. Pellentesque at leo at sem tempor hendrerit non sit amet ante. Cras commodo augue sed magna rutrum rutrum.
+I am planning to leverage my experience working in an enterprise environment to adopt some of their project management strategies. While working at ANZ, the Atlassian suite was heavily leveraged, including Jira for project and task management. I found it to be an effective way to break down tasks into digestable work items, which in turn made it easier to make progress and eventually complete said tasks.
 
 <div class="center">
   <img class="pro-img" src="/images/image-1.webp" alt="First Image" width="500px" height="281" loading="lazy" decoding="async">
