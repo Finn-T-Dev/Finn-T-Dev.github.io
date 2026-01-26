@@ -1,19 +1,18 @@
 ---
-title: 'Project 1'
+title: 'UI Prototype with Noesis'
 description: 'Developing a UI prototype using NoesisGUI Middleware'
 image:
     url: '/images/GitHub.webp'
     alt: 'GitHub wallpaper'
 worksImage1:
-    url: '/images/image-1.webp'
-    alt: 'first image of your project.'
+    url: '/images/UI_Layout_Noesis.png'
+    alt: 'UI layout overview.'
 worksImage2:
-    url: '/images/image-2.webp'
-    alt: 'second image of your project.'
-platform: Web
-stack: Astro, JavaScript
-website: https://astro-milky-way.netlify.app/
-github: https://github.com/ttomczak3/Milky-Way
+    url: '/images/MainMenu_Hierarchy.png'
+    alt: 'Main menu UI hierarchy.'
+platform: Unreal Engine 5, Noesis Engine
+website:
+github: 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+Experimenting with the Noesis middleware for creating User Interfaces for video games. Exploring functionality through implementing menu navigation and in-game HUD elements.
