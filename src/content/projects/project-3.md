@@ -1,6 +1,6 @@
 ---
-title: 'Project 3'
-description: 'This is where the description goes. A gym simulator is in the process of creation.'
+title: 'Project 3 - Deep Dive into Behaviour Systems in UE5'
+description: 'An ill-defined and poorly scoped project.'
 image:
     url: '/images/GitHub.webp'
     alt: 'GitHub wallpaper'
@@ -16,4 +16,4 @@ website: https://astro-milky-way.netlify.app/
 github: https://github.com/ttomczak3/Milky-Way
 ---
 
-I'm going to make this pencil... disappear
+I am planning on developing a number of systems for a gym manager simulator-type game floating nebulously in my head. The main objective is to build a robust gym member behaviour system that allows rule-abiding gym members to operate independently of the player.
