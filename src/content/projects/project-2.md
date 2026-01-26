@@ -1,6 +1,6 @@
 ---
-title: 'Project 2'
-description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci'
+title: 'Project 2: Bass Invaders'
+description: 'Adding a twist to the Space Invaders formula in UE5'
 image:
     url: '/images/GitHub.webp'
     alt: 'GitHub wallpaper'
@@ -10,10 +10,10 @@ worksImage1:
 worksImage2:
     url: '/images/image-2.webp'
     alt: 'second image of your project.'
-platform: Web
-stack: Astro, JavaScript
-website: https://astro-milky-way.netlify.app/
-github: https://github.com/ttomczak3/Milky-Way
+platform: Unreal Engine 5
+stack: Blueprint, C++
+github: TBD
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+For a university project, we gradually built a Space Invaders clone in UE5 (or Unity) before adding features to the experience. The features I chose were:
+- I can't remember right now
