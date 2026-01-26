@@ -5,12 +5,12 @@ image:
     url: '/images/GitHub.webp'
     alt: 'GitHub wallpaper'
 worksImage1:
-    url: '/images/image-1.webp'
-    alt: 'first image of your project.'
+    url: '/images/UI_Layout_Noesis.png'
+    alt: 'Prototype UI Layout.'
 worksImage2:
-    url: '/images/image-2.webp'
-    alt: 'second image of your project.'
-platform: Web
+    url: '/images/MainMenu_Hierarchy.png'
+    alt: 'Prototype menu flow.'
+platform: Unreal Engine 5, NoesisGUI
 stack: Astro, JavaScript
 website: https://astro-milky-way.netlify.app/
 github: https://github.com/ttomczak3/Milky-Way
