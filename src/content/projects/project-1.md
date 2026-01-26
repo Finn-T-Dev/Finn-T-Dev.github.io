@@ -1,5 +1,5 @@
 ---
-title: 'UI Prototype with Noesis'
+title: 'Project 1: UI Prototype with Noesis'
 description: 'Developing a UI prototype using NoesisGUI Middleware'
 image:
     url: '/images/GitHub.webp'
