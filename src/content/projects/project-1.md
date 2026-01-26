@@ -12,8 +12,7 @@ worksImage2:
     alt: 'Main menu UI hierarchy.'
 platform: Unreal Engine 5, Noesis Engine
 stack: Required
-website: Website
-github:  Github
+
 ---
 
 Experimenting with the Noesis middleware for creating User Interfaces for video games. Exploring functionality through implementing menu navigation and in-game HUD elements.

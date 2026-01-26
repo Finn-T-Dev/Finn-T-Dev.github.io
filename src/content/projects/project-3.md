@@ -12,8 +12,6 @@ worksImage2:
     alt: 'second image of your project.'
 platform: Unreal Engine
 stack: C++
-website: https://astro-milky-way.netlify.app/
-github: https://github.com/ttomczak3/Milky-Way
 ---
 
 I am planning on developing a number of systems for a gym manager simulator-type game floating nebulously in my head. The main objective is to build a robust gym member behaviour system that allows rule-abiding gym members to operate independently of the player.

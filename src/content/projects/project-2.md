@@ -12,7 +12,7 @@ worksImage2:
     alt: 'second image of your project.'
 platform: Unreal Engine 5
 stack: Blueprint, C++
-github: TBD
+
 ---
 
 For a university project, we gradually built a Space Invaders clone in UE5 (or Unity) before adding features to the experience. The features I chose were:
