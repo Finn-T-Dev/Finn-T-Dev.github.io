@@ -1,6 +1,6 @@
 ---
 title: 'Project 1'
-description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci'
+description: 'Developing a UI prototype using NoesisGUI Middleware'
 image:
     url: '/images/GitHub.webp'
     alt: 'GitHub wallpaper'
