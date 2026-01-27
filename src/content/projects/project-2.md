@@ -15,5 +15,5 @@ stack: Blueprint, C++
 
 ---
 
-For a university project, we gradually built a Space Invaders clone in UE5 (or Unity) before adding features to the experience. The features I chose were:
+For a university project, I gradually built a Space Invaders clone in UE5 before adding features to the experience. The features I chose were:
 - I can't remember right now
