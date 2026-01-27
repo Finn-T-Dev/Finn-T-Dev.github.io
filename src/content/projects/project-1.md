@@ -2,7 +2,7 @@
 title: 'Project 1: UI Prototype with Noesis'
 description: 'Developing a UI prototype using NoesisGUI Middleware'
 image:
-    url: '/images/NoesisProject/noesis-logo-blue.'
+    url: '/images/NoesisProject/noesis-logo-blue.svg'
     alt: 'GitHub wallpaper'
 platform: Unreal Engine 5, Noesis Engine
 stack: Required
