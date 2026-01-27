@@ -16,6 +16,7 @@
     max-width: clamp(540px, 60vw, 960px);
     width: 100%;
     height: auto;
+    align-items: center;
 }
 
 html {
@@ -183,7 +184,7 @@ li {
 
 .link-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(24ch, 100%), 1fr));
   gap: 1rem;
   padding: 0;
 }
