@@ -12,6 +12,14 @@
   --body: 'Josefin Sans', sans-serif;
 }
 
+.content img,
+article img,
+slot img {
+    max-width: clamp(540px, 60vw, 960px);
+    width: 100%;
+    height: auto;
+}
+
 html {
   background-color: var(--background);
   color: var(--text);
