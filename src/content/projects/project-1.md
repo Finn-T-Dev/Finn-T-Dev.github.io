@@ -2,7 +2,7 @@
 title: 'Project 1: UI Prototype with Noesis'
 description: 'Developing a UI prototype using NoesisGUI Middleware'
 image:
-    url: '/images/GitHub.webp'
+    url: '/images/NoesisProject/noesis-logo-blue.svg'
     alt: 'GitHub wallpaper'
 worksImage1:
     url: '/images/UI_Layout_Noesis.png'
