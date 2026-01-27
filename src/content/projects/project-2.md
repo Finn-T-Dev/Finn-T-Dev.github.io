@@ -1,5 +1,5 @@
 ---
-title: 'Project 2: Bass Invaders'
+title: 'Bass Invaders'
 description: 'Adding a twist to the Space Invaders formula in UE5'
 image:
     url: '/images/GitHub.webp'

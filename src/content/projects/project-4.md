@@ -1,5 +1,5 @@
 ---
-title: 'Project 4 - Home Power Grid Simulator in Unity'
+title: 'Home Power Grid Simulator in Unity'
 description: 'Integrating game logic and data with world space UI Elements in VR.'
 image:
     url: '/images/GitHub.webp'

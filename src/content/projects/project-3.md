@@ -1,5 +1,5 @@
 ---
-title: 'Project 3 - Deep Dive into Behaviour Systems in UE5'
+title: 'Deep Dive into Behaviour Systems in UE5'
 description: 'An ill-defined and poorly scoped project.'
 image:
     url: '/images/GitHub.webp'
