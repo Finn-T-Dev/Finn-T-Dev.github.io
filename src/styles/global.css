@@ -12,10 +12,8 @@
   --body: 'Josefin Sans', sans-serif;
 }
 
-.content img,
-article img,
-slot img {
-    max-width: clamp(540px, 60vw, 960px);
+.pro-img {
+    max-width: 500px;
     width: 100%;
     height: auto;
 }
