@@ -1,6 +1,6 @@
 ---
 title: 'Deep Dive into Behaviour Systems in UE5'
-description: 'An ill-defined and poorly scoped project.'
+description: 'TBD'
 image:
     url: '/images/GitHub.webp'
     alt: 'GitHub wallpaper'
