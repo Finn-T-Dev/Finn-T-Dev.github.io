@@ -15,7 +15,7 @@ stack: Blueprint, C++
 
 ---
 
-For a university project, I gradually built a Space Invaders clone in UE5 before adding features to the experience. The features I chose were:
+For a university project, I gradually built a Space Invaders clone in UE5 before adding features to the experience. Please see the embedded video below which highlights my contributions:
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe 
