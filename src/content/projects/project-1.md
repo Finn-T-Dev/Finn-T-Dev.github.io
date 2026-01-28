@@ -10,7 +10,17 @@ stack: Noesis Studio, NoesisGUI
 
 # Noesis UI Implementation
 
-Built a menu system and in-game HUD using Noesis middleware on top of the UE5 FPS template.
+Built a menu system and in-game HUD using Noesis middleware on top of the UE5 FPS template. Given the sparse documentation (especially for the UE5 plugin) and a short project time frame, this is quite a barebones proof-of-concept UI project. Please see the demo video below:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://youtube.com/embed/4x6ED89lONU" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## UI Hierarchy
 
@@ -36,7 +46,7 @@ Each element is anchored such that they scale properly across resolutions.
 
 ### Challenge 1: Event-Driven HUD Updates
 
-The FPS template mixes Blueprint and C++, so I had to find where the game data lived and how to connect it to Noesis.
+The FPS template mixes Blueprint and C++, so I had to find where the game data lived and how to connect it to Noesis. I leaned on the samples included in the plugin download pack from the Noesis website to understand how the MVVM works in the context of UE5.
 
 **What I did:**
 1. Found the C++ event dispatchers (`OnBulletCountUpdated`, `OnDamaged`) that fire when game state changes
