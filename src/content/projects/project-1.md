@@ -8,79 +8,87 @@ platform: Unreal Engine 5
 stack: Noesis Studio, NoesisGUI
 ---
 
-Experimenting with the Noesis middleware for creating User Interfaces for video games. Exploring functionality through implementing menu navigation and in-game HUD elements.
+# Noesis UI Implementation: Hierarchy Organization and Data Binding
+
+Experimenting with the Noesis middleware for creating User Interfaces for video games. This project explores UI hierarchy organization and data binding challenges through implementing menu navigation and an in-game HUD.
+
+## UI Hierarchy Organization
 
 <img class="pro-img" src="/images/MainMenu_Hierarchy.png" alt="UI layout overview">
 
-The UI layout shows the different components and how they interact with each other. This modular approach makes it easier to maintain and update individual elements.
+I organized the UI using a **modular, layered approach**:
+
+**Main Menu Structure:**
+- Root Grid container acts as the master layout
+- Nested StackPanels for each menu section (Main Menu, Settings, Codex)
+- Each component is self-contained, making it easy to modify individual elements without affecting others
+
+**In-Game HUD Structure:**
+- Spatial organization based on player eye movement patterns:
+  - Health: Bottom-left (secondary priority)
+  - Ammo counter: Bottom-right (primary weapon info location)
+  - Compass: Top-center (navigation/orientation)
+  - Kill count: Top-right (score tracking)
+- Each HUD element is its own StackPanel anchored to specific screen positions
+- This hierarchy ensures elements scale properly across different resolutions
 
 <img class="pro-img" src="/images/UI_Layout_Noesis.png" alt="UI layout overview">
 
-The hierarchy structure demonstrates how the menu system is organised, with nested components that can be easily modified without affecting other parts of the interface.
+The modular hierarchy demonstrates separation of concerns - presentation (XAML), logic (Blueprint/C++), and data (view model) are kept distinct.
 
-I approached this by first building the main menu elements, using grids to position individual elements.
-The first challenge was binding the functionality of the buttons to UE5 blueprint logic using commands in NoesisStudio. By binding the button's click action to a named action matching a UE5 Noesis View blueprint function, i was able to implement logic for the start game button to open the main level, and the other buttons opened their respective menus. 
+## Data Binding Challenge: Event-Driven HUD Updates
 
-First data binding challenge: The codex.
+**The Challenge:**
+The Unreal Engine FPS template uses a mix of Blueprint and C++ logic. I needed to:
+1. Identify where game state data (health, ammo, kills) was stored
+2. Disable the existing UMG HUD elements
+3. Bind Noesis UI to the existing game logic without breaking the template's architecture
 
-I wanted my Noesis view to read from my game logic (the model) using the data context (view model). To accomplish this, I created a blueprint data structure to house the shape of incoming data.
+**My Approach:**
 
+**Step 1: Traced the Data Flow**
+- Found C++ event dispatchers in `ShooterCharacter.h`:
+```cpp
+  FBulletCountUpdatedDelegate OnBulletCountUpdated;
+  FDamagedDelegate OnDamaged;
+```
+- These were already firing when game state changed, but were only connected to the old UMG widgets
+
+**Step 2: Created a Data Context (View Model)**
+- Built `BP_HUDData` Blueprint object to act as the view model
+- Added properties: `Health`, `CurrentAmmo`, `MaxAmmo`, `Kills`, `CompassHeading`
+- Created setter functions that trigger Noesis property change notifications
+
+**Step 3: Connected Events to View Model**
+- In `BP_ShooterPlayerController`, bound to character events in `OnPossess`:
+```
+  OnPossess → Cast to ShooterCharacter
+           → Bind to OnBulletCountUpdated
+           → Bind to OnDamaged
+```
+- This ensures bindings persist across character death/respawn
+
+**Step 4: XAML Data Binding**
 ```xaml
-<Page
-  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  mc:Ignorable="d"
-  d:DesignWidth="1920"
-  d:DesignHeight="1080"
-  Background="#FF4D5052">
-  
-  <Page.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="GlobalResources.xaml"/>
-      </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </Page.Resources>
-  
-  <Grid x:Name="Master">
-    <Grid x:Name="Background">
-      <Grid.Background>
-        <ImageBrush ImageSource="Assets/scifi_main_menu.jpg" Stretch="UniformToFill"/>
-      </Grid.Background>
-      <Grid x:Name="HeaderBar" Background="#FF000000" Height="32" VerticalAlignment="Top"/>
-      <Grid x:Name="FooterBar" Height="32" Background="#FF000000" VerticalAlignment="Bottom"/>
-    </Grid>
-    <Grid x:Name="Interface">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="64"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="51*"/>
-        <RowDefinition Height="838*"/>
-        <RowDefinition Height="64"/>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="64"/>
-        <ColumnDefinition Width="1*"/>
-        <ColumnDefinition Width="1*"/>
-        <ColumnDefinition Width="1*"/>
-        <ColumnDefinition Width="64"/>
-      </Grid.ColumnDefinitions>
-      <Grid x:Name="TitleArea" Grid.Row="1" Grid.Column="2" Margin="0">
-        <TextBlock x:Name="TitleText" Text="Generic Shooter Template" TextWrapping="Wrap" HorizontalAlignment="Center" FontFamily="Broadway" FontSize="56"/>
-      </Grid>
-      <Grid x:Name="SubtitleArea" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="0,12,0,12">
-        <TextBlock x:Name="SubtitleText" Text="You&apos;ve seen it all before" TextWrapping="Wrap" FontSize="24"/>
-      </Grid>
-      <StackPanel x:Name="MenuStack" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2">
-        <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-        <Button x:Name="CodexButton" Content="CODEX" Command="{Binding CodexCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-        <Button x:Name="SettingsButton" Content="SETTINGS" Command="{Binding SettingsCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-        <Button x:Name="ExitButton" Content="EXIT" Command="{Binding ExitCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-      </StackPanel>
-    </Grid>
-  </Grid>
-</Page>
-```xaml
+<TextBlock Text="{Binding CurrentAmmo}" FontSize="48" Foreground="White"/>
+```
+- Direct binding to view model properties
+- UI updates automatically when properties change
+
+**Key Win: Event-Driven Updates**
+Instead of polling game state every frame (Tick), the HUD updates only when values actually change. The C++ code broadcasts events (bullet fired, damage taken), which trigger view model updates, which automatically refresh the UI through Noesis bindings.
+
+**Technical Challenge Solved:**
+Initial issue - property changes weren't triggering UI updates. Solution: implemented `Noesis Notify Property Changed` in the setter functions, ensuring the binding system knows when to refresh displayed values.
+
+**Performance Benefit:**
+Event-driven approach means the UI only recalculates when necessary, not every frame, reducing overhead in a fast-paced FPS environment.
+
+## Summary
+- **Timeframe:** One week
+- **Base:** Unreal Engine 5 FPS template
+- **Challenge:** Navigating C++/Blueprint hybrid architecture, identifying and replacing legacy UMG HUD
+- **Solution:** Leveraged existing event dispatchers, created clean separation between game logic and UI through view model pattern
+- **Result:** Modular, maintainable UI with efficient event-driven updates
+       
 
