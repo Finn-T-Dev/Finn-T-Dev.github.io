@@ -50,12 +50,14 @@ The FPS template mixes Blueprint and C++, so I had to find where the game data l
 
 **What I did:**
 1. Found the C++ event dispatchers (`OnBulletCountUpdated`, `OnDamaged`) that fire when game state changes
-2. Created `BP_HUDData` object to hold UI values (health, ammo, kills, compass)
+2. Created `BP_HUDData` object to hold UI values (health, ammo, kills(NOT IMPLEMENTED), compass)
 3. Bound to the character events in `OnPossess` (so it works after respawn)
 4. Added setter functions that call `Noesis Notify Property Changed`
 5. Used `{Binding PropertyName}` in XAML to connect to the data
 
-The HUD updates only when values actually change (event-driven), not every frame. Main issue: properties weren't updating until I added the notify calls in the setter functions.
+The health and bullet count HUD elements update only when values actually change (event-driven), not every frame. Main issue: properties weren't updating until I added the notify calls in the setter functions. 
+
+Note: The compass bearing is currently updating every frame, reacting to the possiblity of swift player inputs. A potential optimisation would be to reduce the polling rate to once every x number of frames, or on a timer.
 
 ### Challenge 2: Populating the Codex
 
