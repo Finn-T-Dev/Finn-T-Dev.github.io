@@ -8,87 +8,76 @@ platform: Unreal Engine 5
 stack: Noesis Studio, NoesisGUI
 ---
 
-# Noesis UI Implementation: Hierarchy Organization and Data Binding
+# Noesis UI Implementation
 
-Experimenting with the Noesis middleware for creating User Interfaces for video games. This project explores UI hierarchy organization and data binding challenges through implementing menu navigation and an in-game HUD.
+Built a menu system and in-game HUD using Noesis middleware on top of the UE5 FPS template.
 
-## UI Hierarchy Organization
+## UI Hierarchy
 
 <img class="pro-img" src="/images/MainMenu_Hierarchy.png" alt="UI layout overview">
 
-I organized the UI using a **modular, layered approach**:
+**Menu structure:**
+- Root Grid with nested Grids and/pr StackPanels for each section
+- Each menu (Main, Settings, Codex) is self-contained
+- Button commands bound directly to Blueprint functions
+- Reusable (but ugly) button template for consistent styling
 
-**Main Menu Structure:**
-- Root Grid container acts as the master layout
-- Nested StackPanels for each menu section (Main Menu, Settings, Codex)
-- Each component is self-contained, making it easy to modify individual elements without affecting others
+**HUD layout:**
+- Health: bottom-left
+- Ammo: bottom-right  
+- Compass: top-center
+- Kills: top-right
 
-**In-Game HUD Structure:**
-- Spatial organization based on player eye movement patterns:
-  - Health: Bottom-left (secondary priority)
-  - Ammo counter: Bottom-right (primary weapon info location)
-  - Compass: Top-center (navigation/orientation)
-  - Kill count: Top-right (score tracking)
-- Each HUD element is its own StackPanel anchored to specific screen positions
-- This hierarchy ensures elements scale properly across different resolutions
+Each element is anchored such that they scale properly across resolutions.
 
 <img class="pro-img" src="/images/UI_Layout_Noesis.png" alt="UI layout overview">
 
-The modular hierarchy demonstrates separation of concerns - presentation (XAML), logic (Blueprint/C++), and data (view model) are kept distinct.
+## Data Binding Challenges
 
-## Data Binding Challenge: Event-Driven HUD Updates
+### Challenge 1: Event-Driven HUD Updates
 
-**The Challenge:**
-The Unreal Engine FPS template uses a mix of Blueprint and C++ logic. I needed to:
-1. Identify where game state data (health, ammo, kills) was stored
-2. Disable the existing UMG HUD elements
-3. Bind Noesis UI to the existing game logic without breaking the template's architecture
+The FPS template mixes Blueprint and C++, so I had to find where the game data lived and how to connect it to Noesis.
 
-**My Approach:**
+**What I did:**
+1. Found the C++ event dispatchers (`OnBulletCountUpdated`, `OnDamaged`) that fire when game state changes
+2. Created `BP_HUDData` object to hold UI values (health, ammo, kills, compass)
+3. Bound to the character events in `OnPossess` (so it works after respawn)
+4. Added setter functions that call `Noesis Notify Property Changed`
+5. Used `{Binding PropertyName}` in XAML to connect to the data
 
-**Step 1: Traced the Data Flow**
-- Found C++ event dispatchers in `ShooterCharacter.h`:
-```cpp
-  FBulletCountUpdatedDelegate OnBulletCountUpdated;
-  FDamagedDelegate OnDamaged;
-```
-- These were already firing when game state changed, but were only connected to the old UMG widgets
+The HUD updates only when values actually change (event-driven), not every frame. Main issue: properties weren't updating until I added the notify calls in the setter functions.
 
-**Step 2: Created a Data Context (View Model)**
-- Built `BP_HUDData` Blueprint object to act as the view model
-- Added properties: `Health`, `CurrentAmmo`, `MaxAmmo`, `Kills`, `CompassHeading`
-- Created setter functions that trigger Noesis property change notifications
+### Challenge 2: Populating the Codex
 
-**Step 3: Connected Events to View Model**
-- In `BP_ShooterPlayerController`, bound to character events in `OnPossess`:
-```
-  OnPossess → Cast to ShooterCharacter
-           → Bind to OnBulletCountUpdated
-           → Bind to OnDamaged
-```
-- This ensures bindings persist across character death/respawn
+Created a data structure to hold codex entries and populate them dynamically.
 
-**Step 4: XAML Data Binding**
-```xaml
-<TextBlock Text="{Binding CurrentAmmo}" FontSize="48" Foreground="White"/>
-```
-- Direct binding to view model properties
-- UI updates automatically when properties change
+**What I did:**
+1. Created `BP_CodexEntry` struct with fields for title, description, image path. These contain data relating to character bios.
+2. Built an array of these entries in the view model
+3. Used a `ListBox` in XAML with `ItemsSource="{Binding CodexEntries}"`
+4. Created a DataTemplate to define how each entry displays
+5. The view model populates the entries on initialisation
 
-**Key Win: Event-Driven Updates**
-Instead of polling game state every frame (Tick), the HUD updates only when values actually change. The C++ code broadcasts events (bullet fired, damage taken), which trigger view model updates, which automatically refresh the UI through Noesis bindings.
+This meant I could add/modify codex content without touching the XAML.
 
-**Technical Challenge Solved:**
-Initial issue - property changes weren't triggering UI updates. Solution: implemented `Noesis Notify Property Changed` in the setter functions, ensuring the binding system knows when to refresh displayed values.
+### Challenge 3: Two-Way Binding for Volume Slider
 
-**Performance Benefit:**
-Event-driven approach means the UI only recalculates when necessary, not every frame, reducing overhead in a fast-paced FPS environment.
+The settings menu needed a volume slider that both reads and writes to the game's audio settings.
+
+**What I did:**
+1. Added `Volume` property to the settings view model
+2. Used `{Binding Volume, Mode=TwoWay}` on the Slider in XAML
+3. When the slider moves, it updates the view model property
+4. The setter function applies the volume change to UE5's audio system
+5. Initial value is read from saved settings when the menu opens
+
+Two-way binding meant the slider position always matches the actual game volume, and dragging it immediately updates the value in-engine.
 
 ## Summary
-- **Timeframe:** One week
-- **Base:** Unreal Engine 5 FPS template
-- **Challenge:** Navigating C++/Blueprint hybrid architecture, identifying and replacing legacy UMG HUD
-- **Solution:** Leveraged existing event dispatchers, created clean separation between game logic and UI through view model pattern
-- **Result:** Modular, maintainable UI with efficient event-driven updates
+- One week project
+- Had to disable the existing UMG HUD and figure out the template's data flow
+- Used existing event dispatchers instead of polling every frame where possible
+- Data structures and binding patterns made content dynamic and maintainable
+- Two-way binding kept UI and game state in sync
        
 
