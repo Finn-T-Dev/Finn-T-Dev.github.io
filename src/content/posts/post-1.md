@@ -1,13 +1,12 @@
 ---
-title: 'Day 1 - Creation of Game Design Document (GDD)'
+title: 'UNDER CONSTRUCTION'
 author: Finn Tucker
 date: '11-10-2025'
 image:
     url: '/images/blog-post.webp'
     alt: 'Post Thumbnail'
 ---
-<a href="https://google.com">Googlegungus</a>
-Today I created a template for the game design document I will be using to create my Gym management sim/character role playing game. 
+
 <div class="center">
   <img class="pro-img" src="/images/image-1.webp" alt="First Image" width="500px" height="281" loading="lazy" decoding="async">
 </div>

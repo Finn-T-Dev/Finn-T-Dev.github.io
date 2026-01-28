@@ -14,7 +14,7 @@ platform: Unity Engine
 stack: C#, XR Interaction Toolkit
 ---
 
-I created a power grid simulation in which users can plug/unplug/switch on/switch off electrical devices in a simple home simulation, and have the changes reflected in real-time power usage. Also simulated the impact of a solar energy system with a dynamically variable number of solar panels, enabling the user to see how much power was being generated and utilised by each source. 
+I created a power grid simulation in which users can plug/unplug/switch on/switch off electrical devices in a simple home simulation, and have the changes reflected in real-time power usage. Also simulated the impact of a solar energy system with a dynamically variable number of solar panels, enabling the user to see how much power was being generated and utilised by each source. Please see the video below for a short demonstration:
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe 
