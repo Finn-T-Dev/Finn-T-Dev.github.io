@@ -11,13 +11,23 @@
   --header: 'Pacifico', cursive;
   --body: 'Josefin Sans', sans-serif;
 }
-
+/*
 .pro-img {
     max-width: clamp(540px, 60vw, 960px);
     width: 100%;
     height: auto;
     align-items: center;
 }
+    */
+
+.pro-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 
 html {
   background-color: var(--background);
