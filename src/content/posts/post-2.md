@@ -3,12 +3,12 @@ title: '3D Asset Showcase'
 author: Finn Tucker
 date: '19/02/26'
 image:
-    url: '/images/'
+    url: 'https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/blender/blender-original.svg'
     alt: 'Figma Logo'
 ---
 
 <div class="center">
-  <img class="pro-img" src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/blender/blender-original.svg" alt="Scorebug" width="500px" height="281" loading="lazy" decoding="async">
+  <img class="pro-img" src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/blender/blender-original.svg" alt="Scorebug" width="80px" height="auto" loading="lazy" decoding="async">
 </div>
 
 Brief video to showcase 3D modelling & texturing work done in Blender below:
