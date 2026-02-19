@@ -1,20 +1,19 @@
 ---
-title: 'UNDER CONSTRUCTION'
+title: 'Rapid Design with Figma'
 author: Finn Tucker
-date: '11-10-2025'
+date: '19/02/26'
 image:
-    url: '/images/blog-post.webp'
-    alt: 'Post Thumbnail'
+    url: '/images/Figma-logo.svg'
+    alt: 'Figma Logo'
 ---
 
 <div class="center">
-  <img class="pro-img" src="/images/image-1.webp" alt="First Image" width="500px" height="281" loading="lazy" decoding="async">
+  <img class="pro-img" src="/images/Scorebug.png" alt="Scorebug" width="500px" height="281" loading="lazy" decoding="async">
 </div>
 
-Vivamus sed faucibus lorem. Aenean a lorem convallis, ultrices nisl vitae, imperdiet elit. Duis in tristique lacus. Quisque sollicitudin dolor ac dui faucibus, ut tincidunt velit blandit. Donec tincidunt metus eros, at dignissim enim blandit ut. Cras varius tincidunt tortor ac tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed a ipsum quis nulla commodo pretium. Ut sed sem bibendum, facilisis dolor sit amet, interdum nibh. Aliquam id auctor dolor. In nulla diam, mattis quis nisl et, aliquam interdum quam. Donec lobortis ex arcu, ac pharetra ante vehicula euismod. Donec finibus faucibus felis vitae facilisis.
+Experimenting with Figma to create an AFL Scorebug. Emphasis on visual clarity and simplicity. Sports fans have grown accustomed to particular layouts, it is important to cater to the target audience. 
 
 <div class="center">
-  <img class="pro-img" src="/images/image-2.webp" alt="Second Image" width="500px" height="281" loading="lazy" decoding="async">
+  <img class="pro-img" src="/images/figma-hierarchy.png" alt="figma-hierarchy" width="500px" height="281" loading="lazy" decoding="async">
 </div>
 
-Vivamus sed faucibus lorem. Aenean a lorem convallis, ultrices nisl vitae, imperdiet elit. Duis in tristique lacus. Quisque sollicitudin dolor ac dui faucibus, ut tincidunt velit blandit. Donec tincidunt metus eros, at dignissim enim blandit ut. Cras varius tincidunt tortor ac tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed a ipsum quis nulla commodo pretium. Ut sed sem bibendum, facilisis dolor sit amet, interdum nibh. Aliquam id auctor dolor. In nulla diam, mattis quis nisl et, aliquam interdum quam. Donec lobortis ex arcu, ac pharetra ante vehicula euismod. Donec finibus faucibus felis vitae facilisis.
