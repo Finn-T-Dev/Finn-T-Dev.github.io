@@ -334,15 +334,15 @@ html.light {
 }
 
 .light .git-icon {
-  content: url("/.netlify/images?url=/images/github-mark.svg");
+  content: url("/images/github-mark.svg");
 }
 
 .light .mail-icon {
-  content: url("/.netlify/images?url=/images/mail.svg");
+  content: url("/images/mail.svg");
 }
 
 .light .linked-in {
-  content: url("/.netlify/images?url=/images/li-in.png");
+  content: url("/images/li-in.png");
 }
 
 .light .badge__link {
