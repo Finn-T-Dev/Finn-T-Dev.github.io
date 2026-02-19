@@ -10,7 +10,24 @@ stack: Noesis Studio, NoesisGUI
 
 # Noesis UI Implementation
 
-Built a menu system and in-game HUD using Noesis middleware on top of the UE5 FPS template. Given the sparse documentation (especially for the UE5 plugin) and a short project time frame, this is quite a barebones proof-of-concept UI project. Please see the demo video below:
+Built a menu system and in-game HUD using Noesis middleware on top of the UE5 FPS template. Given the sparse documentation (especially for the UE5 plugin) and a short project time frame, this is quite a barebones proof-of-concept UI project. Please see the demo video below (now updated to Version 2):
+
+**New Addtions:**
+- Buttons added using reusable template
+- Minimap oriented to the player's rotation
+- Visual representation of equipped weapon in the same corner as the ammo counter
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://youtube.com/embed/AME0N_go8yE" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+**Version 1 below:**
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe 
