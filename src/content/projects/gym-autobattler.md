@@ -7,3 +7,8 @@ image:
 platform: PC
 stack: N/A (so far)
 ---
+
+# Gym-Themed Autobattler Prototype
+<div>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQCZAWNd4zyNZzTHflVjFiLBVF5bFLW0G1lOaCLIW5tqnh3n0_WfXOSDOhxTW9-z5C8E4KNZsthS14/pubhtml?widget=true&amp;headers=false"></iframe>
+</div>
