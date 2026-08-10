@@ -5,7 +5,7 @@ image:
     url: '/images/gym-autobattler/dumbbell.png'
     alt: 'Dumbbell placeholder'
 platform: PC
-stack: Unreal Engine 5 w/ NoesisGUI plugin
+stack: Unreal Engine 5, NoesisGUI
 ---
 
 ## Overview
@@ -37,25 +37,40 @@ LIFT-OFF's primary audience is the surprisingly large overlap between people who
 
 ## Competitors
 1. **The Bazaar:** Closest match in terms of gameplay, many of my gameplay systems are at least loosely based on the Bazaar. 
-2. **Gym Simulator:** 
-3. **Gym Empire:**
+2. **Gym Simulator & Gym Empire:** Existing titles that tap in the gaming gymgoer market. These titles are thematically aligned with my project, but differ at a core gameplay level.
 
 ## Core Gameplay Loop
-- Stage begins: Each encounter begins with taking stock of items in possession and looking ahead at the predetermined combat encounters ahead (events between designated combat encounters are hidden)
+- Stage begins: Each encounter begins with taking stock of items in possession and looking ahead at the predetermined combat encounters ahead (events between designated combat encounters are hidden).
 - Select an encounter from the 3 pseudorandomly generated events and resolve it for its effect (could be a merchant, selecting a buff if certain gameplay conditions have been met, or a miniboss etc)
-- Acquire items and place them in the appropriate location (items with active effects go in the dumbbell rack, items with passive effects are automatically placed in the gym bag)
-- Repeat until halfway through the stage, where a miniboss will be waiting. Select one of the minibosses and resolve the combat encounter.
+- Acquire items and place them in strategic locations (items with active effects go in the dumbbell rack, items with passive effects (skills) are automatically placed in the gym bag)
+- Repeat until the next combat encounter. In the standard case, there will be a mini-boss encounter at the halfway point of each stage.
 - Continue to resolve encounters until the main boss of the stage. The victory condition for a stage is reducing the boss enemy's health bar to 0 before yours reaches 0 (ties are friendly).
 
-## Balance Spreadsheet
+## Gameplay Details
+The player and enemy combat areas will each be a 2-row grid, that expands up to a cap with player level. If placed on the top row, some items will target your opponent. For example, opponents who abuse steroids will have high blood toxicity levels, and will be inflicting damage over time effects on themselves. One possible player response would be to use an item that synergises with the toxicity, amplifying the steroid's negative side effects and hastening their defeat.
 
+How you position your items can make or break a run. While poor item placement will not debuff the items you have, you may be missing out on vital placement bonuses. One example is items that work together to perform a real world function, such as a combination of a pre-workout supplement and warm-up routine enhancing the subsequent workout. When positioned adjacent to one another, your synergising items may receive a boost to ramp-up speed, raw stats or scaling. Synergies are not just limited to real-world function, they may also be based on item sizes and/or tags. Some items may exert an effect over all of your items with a certain tag, a certain size, a certain value etc.
+
+The core gameplay effects that an item can exert include:
+- Damage (Strength)
+- Healing (Stamina)
+- Shielding (Warm-up)
+- Health Regeneration (Recovery)
+- Burning (Lactic Acid)
+- Poisoning (Blood Toxicity)
+- Slowing (Fatigue)
+- Hasting (Speed)
+- Freezing (Cramping)
+
+
+## Balance Spreadsheet
 Each item's expected power is a function of the item's tier and size.
 
-Depending on the desired effect(s) of the item, a value will be assigned to the effect. The default value is 0, meaning that the item does not influence that vector. The sum of the effect weightings should be equal to the expected power as part of the initial balancing pass.
+Depending on the desired effect(s) of the item, a value will be assigned to the effect. The default value is 0, meaning that the item does not influence that vector. The sum of the effect weightings should be at least roughly equal to the expected power as part of the initial balancing pass. More work needs to be done on the weighting of each effect for the expected power scaling.
 
-After the initial balance pass is complete, the plan is to devise a simple ML model that will complete combat encounters with preset loadouts against enemies intended to appear at the currently tested stage. Telemetry data will be used to determine the relative strength of each effect, and in turn, each item. 
+After the initial balance pass is complete, the plan is to design a simple ML model that will complete combat encounters with preset loadouts against enemies intended to appear at the currently tested stage. Telemetry data will be collected and used to determine the relative strength of each effect to achieve more fun levels of game balance. 
 
-In an async online or PVE autobattler, it is desirable not to achieve 'perfect' balance. To a certain extent, the player should be motivated by a desire to 'break' the game, i.e achieving a build that exceeds the power curve of the opponents
+In an async online or PVE autobattler, it is desirable not to achieve 'perfect' balance. To a certain extent, the player should be motivated by a desire to 'break' the game, i.e achieving a build that exceeds the player's expected power level relative to their progress in a run.
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
     <iframe 
