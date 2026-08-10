@@ -10,5 +10,7 @@ stack: N/A (so far)
 
 # Gym-Themed Autobattler Prototype
 <div>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQCZAWNd4zyNZzTHflVjFiLBVF5bFLW0G1lOaCLIW5tqnh3n0_WfXOSDOhxTW9-z5C8E4KNZsthS14/pubhtml?widget=true&amp;headers=false"></iframe>
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSQCZAWNd4zyNZzTHflVjFiLBVF5bFLW0G1lOaCLIW5tqnh3n0_WfXOSDOhxTW9-z5C8E4KNZsthS14/pubhtml?widget=true&amp;headers=false"></iframe>
 </div>
