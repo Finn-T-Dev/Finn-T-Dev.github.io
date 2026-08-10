@@ -2,8 +2,8 @@
 title: 'Gym-Themed Autobattler Prototype'
 description: 'Devising system structure for gym-themed autobattler game inspired by The Bazaar & Balatro'
 image:
-    url: '/images/gym-autobattler/dumbbell.png'
-    alt: 'Dumbbell placeholder'
+    url: '/images/GitHub.webp'
+    alt: 'GitHub wallpaper'
 platform: PC
 stack: Unreal Engine 5, NoesisGUI
 ---
@@ -47,10 +47,12 @@ LIFT-OFF's primary audience is the surprisingly large overlap between people who
 - Continue to resolve encounters until the main boss of the stage. The victory condition for a stage is reducing the boss enemy's health bar to 0 before yours reaches 0 (ties are friendly).
 
 ## Gameplay Details
+### Item positioning
 The player and enemy combat areas will each be a 2-row grid, that expands up to a cap with player level. If placed on the top row, some items will target your opponent. For example, opponents who abuse steroids will have high blood toxicity levels, and will be inflicting damage over time effects on themselves. One possible player response would be to use an item that synergises with the toxicity, amplifying the steroid's negative side effects and hastening their defeat.
 
 How you position your items can make or break a run. While poor item placement will not debuff the items you have, you may be missing out on vital placement bonuses. One example is items that work together to perform a real world function, such as a combination of a pre-workout supplement and warm-up routine enhancing the subsequent workout. When positioned adjacent to one another, your synergising items may receive a boost to ramp-up speed, raw stats or scaling. Synergies are not just limited to real-world function, they may also be based on item sizes and/or tags. Some items may exert an effect over all of your items with a certain tag, a certain size, a certain value etc.
 
+### Item Effects
 The core gameplay effects that an item can exert include:
 - Damage (Strength)
 - Healing (Stamina)
@@ -62,15 +64,22 @@ The core gameplay effects that an item can exert include:
 - Hasting (Speed)
 - Freezing (Cramping)
 
+### Enchantments
+Encounters with diviners of the mystical arts, such as the Homeopath, will give the players opportunities to enhance their items with enchantments. 
+
+### Legendary Items
+In rare events, players will be given the opportunity to acquire Legendary items. These will be inspired by greats of the fitness industry, and will effectively ignore the base power scaling model. The player will not be given an opportunity to choose a Legendary item. When offered, it will be a blind random choice, or
 
 ## Balance Spreadsheet
-Each item's expected power is a function of the item's tier and size.
+Each item's expected power is a function of the item's tier, size and rarity.
 
 Depending on the desired effect(s) of the item, a value will be assigned to the effect. The default value is 0, meaning that the item does not influence that vector. The sum of the effect weightings should be at least roughly equal to the expected power as part of the initial balancing pass. More work needs to be done on the weighting of each effect for the expected power scaling.
 
 After the initial balance pass is complete, the plan is to design a simple ML model that will complete combat encounters with preset loadouts against enemies intended to appear at the currently tested stage. Telemetry data will be collected and used to determine the relative strength of each effect to achieve more fun levels of game balance. 
 
 In an async online or PVE autobattler, it is desirable not to achieve 'perfect' balance. To a certain extent, the player should be motivated by a desire to 'break' the game, i.e achieving a build that exceeds the player's expected power level relative to their progress in a run.
+
+The WIP game balance spreadsheet can be seen below:
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
     <iframe 
