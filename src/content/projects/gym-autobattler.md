@@ -77,7 +77,26 @@ Depending on the desired effect(s) of the item, a value will be assigned to the 
 
 After the initial balance pass is complete, the plan is to design a simple ML model that will complete combat encounters with preset loadouts against enemies intended to appear at the currently tested stage. Telemetry data will be collected and used to determine the relative strength of each effect to achieve more fun levels of game balance. 
 
-In an async online or PVE autobattler, it is desirable not to achieve 'perfect' balance. To a certain extent, the player should be motivated by a desire to 'break' the game, i.e achieving a build that exceeds the player's expected power level relative to their progress in a run.
+In an async online or PVE autobattler, it can be desirable not to achieve 'perfect' balance. To a certain extent, the player should be motivated by a desire to 'break' the game, i.e achieving a build that exceeds the player's expected power level relative to their progress in a run. 
+
+## Psychological Motivators
+| Psychology | Implementation |
+|:---|:---|
+|Intrinsic| Competence - a feeling of improving skill over time leading to progression, Autonomy - being able to do what you want within the rules of the game, rules aren't overly restrictive, Relatedness - ??
+|Extrinsic| Extrinsic motivation will be provided through a ranked system with leaderboards. Seeded runs will be playable in the form of daily or weekly challenges, with the best-performing builds achieving higher scores and higher rankings. Evolving from the base PVE mode is hopes to build |
+| Operant Conditioning | Players will be more likely to perform actions if in expectation of a reward. Think sensory stimulus like in boomer games (Candy Crush comes to mind). The player is bombarded with sound and visual effects when they chain together a sweet combo. In LIFT-OFF, the sensory feedback needs to have a functional relationship to the |
+| Cognitive UX & Attention Management | Managing Cognitive Load, Directing Attention, Designing for Flow|
+| Variable Reward Scheduling | As demonstrably proven by slot machine programming (and Trading Cards, and sports betting), Variable Reward Scheduling is extremely effective for capturing human attention. Through pseudorandom encounters and reward availability, 
+
+## Bartle's Taxonomy
+| Archetype | Alignment |
+|:----------|:----------|
+|Achiever   ||
+|Socialiser | Unlockable cosmetic items will allow a form of socialisation, as the player can customise the gym to their liking. These customisations will be viewable by other players in the async online mode when implemented. |
+|Explorer   | Sprinkled throughout the game experience will be the opportunity to partake in rare, transformative events. |
+|Killer     | Killers will derive enjoyment from LIFT-OFF through competitive mastery. Each battle is a direct 1v1 competition|
+
+
 
 The WIP game balance spreadsheet can be seen below:
 
